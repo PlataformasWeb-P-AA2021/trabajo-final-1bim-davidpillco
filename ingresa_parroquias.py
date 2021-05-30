@@ -20,6 +20,7 @@ cadena = []
 b = []
 # Ciclo para tratar los datos
 for d in itertools.islice(parroquia, 1, None):
+    # Split para separacion de los datos
     g = d.split("|")
     a = g[len(g)-1].split("\n")
     g[len(g)-1] = a[0]

@@ -20,6 +20,7 @@ cadena = []
 b = []
 # Ciclo para tratar los datos
 for d in itertools.islice(cantones, 1, None):
+    # Split para separacion de los datos
     g = d.split("|")
     a = g[len(g)-1].split("\n")
     g[len(g)-1] = a[0]
@@ -48,4 +49,5 @@ for x in unicos:
     print(mis_cantones)
     session.add(mis_cantones)
 
+# Guardar cambios
 session.commit()

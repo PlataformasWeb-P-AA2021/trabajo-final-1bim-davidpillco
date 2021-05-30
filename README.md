@@ -1,5 +1,7 @@
 # Trabajo Final Primer Bimestre
 
+Orden de ejecución se encuentra en la wiki del repositorio
+
 ## Uso de SqlAlchemy
 
 Dada la información de la carpeta ***data***. Realizar las siguientes tareas:

@@ -19,6 +19,7 @@ provincias = open("data/Listado-Instituciones-Educativas.csv", "r",encoding='utf
 unicos = []
 # Ciclo para tratar los datos
 for d in itertools.islice(provincias, 1, None):
+    # Split para separacion de los datos
     cadena = d.split("|")
     a = cadena[len(cadena)-1].split("\n")
     cadena[len(cadena)-1] = a[0]
@@ -31,4 +32,5 @@ for x in unicos:
     mis_provincias = Provincia(codigo_provincia = x[0], provincia = x[1])
     session.add(mis_provincias)
 
+# Guardar cambios
 session.commit()
