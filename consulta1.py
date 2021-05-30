@@ -17,10 +17,13 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Consulta 1 Todos los establecimientos de la provincia de Loja.
-
+print("Consulta 1")
 consulta1 = session.query(Institucion).join(Parroquia,Canton,Provincia).filter(Provincia.provincia == 'LOJA').all()
+# Impresión consulta
 print(consulta1)
-
+print("------------------------")
+print("Consulta 2")
 # Todos los establecimientos del cantón de Loja.
 consulta2 = session.query(Institucion).join(Parroquia,Canton,Provincia).filter(Canton.canton == 'LOJA').all()
+# Impresión consulta
 print(consulta2)

@@ -17,11 +17,14 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Los establecimientos ordenados por número de estudiantes; que tengan más de 100 estudiantes.
-
+print("Consulta 7")
 consulta7 = session.query(Institucion).filter(Institucion.num_docentes > 100).order_by(Institucion.num_estudiantes).all()
+# Impresión consulta
 print(consulta7)
-
+print("------------------------")
+print("Consulta 8")
 # Los establecimientos ordenados por número de profesores; que tengan más de 100 profesores.
 
 consulta8 = session.query(Institucion).filter(Institucion.num_docentes > 100).order_by(Institucion.num_docentes).all()
+# Impresión consulta
 print(consulta8)

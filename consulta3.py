@@ -17,12 +17,15 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Los cantones que tiene establecimientos con 0 número de profesores
-
+print("Consulta 5")
 consulta5 = session.query(Institucion).filter(Institucion.num_docentes == 0).all()
+# Impresión consulta
 print(consulta5)
+print("------------------------")
+print("Consulta 6")
 
 # Los establecimientos que pertenecen a la parroquia Catacocha con estudiantes mayores o iguales a 21
-
 consulta6 = session.query(Institucion).join(Parroquia).filter(and_(Institucion.num_estudiantes >= 21,
 Parroquia.parroquia == "CATACOCHA")).all()
+# Impresión consulta
 print(consulta6)

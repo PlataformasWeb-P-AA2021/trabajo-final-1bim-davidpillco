@@ -17,12 +17,15 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Las parroquias que tienen establecimientos únicamente en la jornada Nocturna
-
+print("Consulta 3")
 consulta3 = session.query(Parroquia).join(Institucion).filter(Institucion.jornada == 'Nocturna').all()
+# Impresión consulta
 print(consulta3)
-
+print("------------------------")
+print("Consulta 4")
 # Los cantones que tiene establecimientos como número de estudiantes tales como: 448, 450, 451, 454, 458, 459
 
 consulta4 = session.query(Canton).join(Parroquia,Institucion).filter(or_(Institucion.num_estudiantes == 448,Institucion.num_estudiantes==450,
     Institucion.num_estudiantes==451, Institucion.num_estudiantes==454, Institucion.num_estudiantes == 458, Institucion.num_estudiantes == 459)).all()
+    # Impresión consulta
 print(consulta4)

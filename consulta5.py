@@ -17,13 +17,15 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Los establecimientos ordenados por nombre de parroquia que tengan más de 20 profesores y la cadena "Permanente" en tipo de educación.
-
+print("Consulta 9")
 consulta9 = session.query(Institucion).join(Parroquia).filter(and_(Institucion.num_docentes > 20,
 Institucion.tipo_educacion.like("%Permanente%"))).order_by(Parroquia.parroquia).all()
-
-# print(consulta9)
-
+# Impresión consulta
+print(consulta9)
+print("------------------------")
+print("Consulta 10")
 # Todos los establecimientos ordenados por sostenimiento y tengan código de distrito 11D02.
 
 consulta10 = session.query(Institucion).join(Parroquia).filter(Institucion.distrito == '11D02').order_by(Institucion.sostenimiento).all()
+# Impresión consulta
 print(consulta10)
